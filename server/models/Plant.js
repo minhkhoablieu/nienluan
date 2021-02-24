@@ -23,6 +23,8 @@ const plantSchema = new Schema(
     //Hình ảnh
     images: {
       type: Array,
+    required: false,
+
     },
     //Slug
     slug: {

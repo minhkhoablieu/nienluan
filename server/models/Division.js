@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const divisionSchema = new Schema(
   {
-    //Tên việt nam
+    //Tên Việt Nam
     common_name: {
       type: String,
       required: true,

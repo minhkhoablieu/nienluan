@@ -10,7 +10,7 @@ router.get("/cities", CityController.index);
 router.post("/cities", checkAuth, CityController.store);
 router.delete("/cities/:id", checkAuth, CityController.destroy);
 
-// router.get("/divisions", DivisionController.index);
+router.get("/divisions", DivisionController.index);
 router.post("/divisions", checkAuth, DivisionController.store);
 // router.delete("/divisions/:id", checkAuth, DivisionController.destroy);
 
