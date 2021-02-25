@@ -1,15 +1,14 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const slugify = require("slugify");
 
 const divisionSchema = new Schema(
   {
-    //Tên Việt Nam
     common_name: {
       type: String,
       required: true,
       unique: true,
     },
-    //Tên khoa học
     scientific_name: {
       type: String,
       required: true,
@@ -23,8 +22,14 @@ const divisionSchema = new Schema(
   },
   { timestamps: true }
 );
+
 divisionSchema.pre("save", function (next) {
-  this.slug = this.common_name;
+  this.slug = slugify(this.common_name, {
+    remove: undefined,
+    lower: true,
+    strict: false,
+    locale: "vi",
+  });
   next();
 });
 module.exports = mongoose.model("divisions", divisionSchema);

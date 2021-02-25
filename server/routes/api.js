@@ -12,6 +12,8 @@ router.delete("/cities/:id", checkAuth, CityController.destroy);
 
 router.get("/divisions", DivisionController.index);
 router.post("/divisions", checkAuth, DivisionController.store);
+router.delete("/divisions/:id", checkAuth, DivisionController.destroy);
+
 // router.delete("/divisions/:id", checkAuth, DivisionController.destroy);
 
 module.exports = router;

@@ -18,7 +18,7 @@ exports.login = async (req, res) => {
       }
     );
     res.status(200).json({
-      message: "Auth successful",
+
       token: token,
     });
   } catch (err) {
