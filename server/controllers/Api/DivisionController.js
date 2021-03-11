@@ -1,6 +1,5 @@
 const Division = require("../../models/Division");
 
-
 exports.index = async (req, res) => {
   const divisions = await Division.find();
   res.status(200).json(divisions);
@@ -11,7 +10,7 @@ exports.store = async (req, res) => {
   const scientific_name = req.body.scientific_name;
   const division = new Division({
     common_name: common_name,
-    scientific_name: scientific_name
+    scientific_name: scientific_name,
   });
 
   try {
@@ -28,12 +27,12 @@ exports.store = async (req, res) => {
 
 exports.destroy = async (req, res) => {
   const id = req.params.id;
-  try{
+  try {
     const result = await Division.deleteOne({ _id: id });
     res.status(200).json({
       data: result,
     });
-  }catch(err){
+  } catch (err) {
     res.status(500).json({
       error: err,
     });

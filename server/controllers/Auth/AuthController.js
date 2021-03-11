@@ -18,7 +18,6 @@ exports.login = async (req, res) => {
       }
     );
     res.status(200).json({
-
       token: token,
     });
   } catch (err) {

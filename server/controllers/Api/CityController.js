@@ -25,12 +25,12 @@ exports.store = async (req, res) => {
 
 exports.destroy = async (req, res) => {
   const id = req.params.id;
-  try{
+  try {
     const result = await City.deleteOne({ _id: id });
     res.status(200).json({
       data: result,
     });
-  }catch(err){
+  } catch (err) {
     res.status(500).json({
       error: err,
     });

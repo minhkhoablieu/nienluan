@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 const plantSchema = new Schema(
   {
-
     common_name: {
       type: String,
       required: true,
@@ -23,8 +22,7 @@ const plantSchema = new Schema(
 
     images: {
       type: Array,
-    required: false,
-
+      required: false,
     },
     //Slug
     slug: {
